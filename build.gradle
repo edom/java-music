@@ -1,0 +1,40 @@
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.1'
+}
+
+allprojects {
+    repositories {
+        jcenter();
+    }
+    apply plugin: 'java'
+    sourceCompatibility = '1.8'
+    configurations.all {
+        resolutionStrategy {
+            failOnVersionConflict()
+            // MIT
+            force 'org.slf4j:slf4j-api:1.7.20'
+        }
+    }
+    apply plugin: 'idea'
+    apply plugin: 'java-library-distribution'
+}
+
+project('draw-awt') {
+    dependencies {
+        compile project(':draw')
+    }
+}
+
+project('music-notation-editor-swing') {
+    dependencies {
+        compile project(':draw-awt')
+        // LGPL 3.0
+        compile 'org.audiveris:proxymusic:3.0.1'
+        // LGPL 2.1
+        compile 'ch.qos.logback:logback-classic:1.1.7'
+    }
+}
+
+dependencies {
+    compile project('music-notation-editor-swing')
+}

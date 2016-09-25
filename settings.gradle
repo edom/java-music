@@ -1,0 +1,7 @@
+include(
+    'draw'
+    , 'draw-awt'
+    , 'music-notation'
+    , 'music-notation-editor'
+    , 'music-notation-editor-swing'
+)
