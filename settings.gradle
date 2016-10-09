@@ -1,7 +1,10 @@
 include(
     'draw'
     , 'draw-awt'
+    , 'gui'
+    , 'gui-awt'
     , 'music-notation'
     , 'music-notation-editor'
     , 'music-notation-editor-swing'
+    , 'unclear'
 )

@@ -44,6 +44,8 @@ The following modules are licensed under GNU Affero General Public License versi
 
 - draw
 - draw-awt
+- gui
+- gui-awt
 - music-notation
 - music-notation-editor
 - music-notation-editor-swing
@@ -67,3 +69,47 @@ For the versions used, see the `build.gradle` file.
 #### LGPL 2.1
 
 - ch.qos.logback:logback-classic
+
+# User stories
+
+## Big pictures
+
+The user wants to create a composition.
+
+The User wants to create an arrangement.
+
+The User wants to insert rehearsal marks.
+
+The User wants to print the score.
+
+The User wants to write numbered notation for Indonesian choir.
+
+The User wants to rewrite the time signature from 4/4 to 2/2 without changing the actual note duration.
+
+The User wants to assign his own keyboard shortcut.
+
+## Entry
+
+The User wants to enter a G clef.
+
+The User wants to enter a note using the QWERTY keyboard.
+
+## Editing/correction
+
+The User wants to delete the last note.
+
+The User wants to move an object.
+
+# Design
+
+U: The Software provides a Cursor.
+
+U: Pressing the Right arrow moves the Cursor to the next note.
+
+U: Pressing the Left arrow moves the Cursor to the previous note.
+
+U: The Cursor is a static yellow rectangle.
+
+U: The background of the selected staff is #eee.
+
+The background color of the editor is #fff.

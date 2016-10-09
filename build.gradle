@@ -25,11 +25,31 @@ project('draw-awt') {
     }
 }
 
+project('gui') {
+}
+
+project('gui-awt') {
+    dependencies {
+        compile project(':gui')
+    }
+}
+
+project('music-notation-editor') {
+    dependencies {
+        compile project(':draw')
+        compile project(':gui')
+        compile project(':music-notation')
+        compile project(':unclear')
+        // LGPL 3.0
+        compile 'org.audiveris:proxymusic:3.0.1'
+    }
+}
+
 project('music-notation-editor-swing') {
     dependencies {
         compile project(':draw-awt')
-        // LGPL 3.0
-        compile 'org.audiveris:proxymusic:3.0.1'
+        compile project(':gui-awt')
+        compile project(':music-notation-editor')
         // LGPL 2.1
         compile 'ch.qos.logback:logback-classic:1.1.7'
     }
